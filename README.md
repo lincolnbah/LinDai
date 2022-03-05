@@ -47,7 +47,7 @@ request
 }
 說明:修改某筆updateTime為參數值的整筆資料
 -------------------------------------------------------
-SQL
+SQL:
 CREATE TABLE IF NOT EXISTS `currencytt` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `eur_chinese` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,

@@ -73,29 +73,29 @@ public class DataProcessing {
                 .usdEnglish(usdEnglish).usdChinese(usdChinese).usdRate(new BigDecimal(usdRate)).updateTime(updateTime).build();
         currencyRepository.save(build);
     }
-
+    // 回傳全部資料
     public List getAllData() {
         return currencyRepository.findAll();
     }
-
+    // 回傳最新一筆資料
     public List getLatestData() {
         return currencyRepository.findLatestData();
     }
-
+    // 時間查找資料
     public List getDataToDatetime(String dateTime) {
         return currencyRepository.getByDate(dateTime);
     }
-
+    // 刪除資料
     public int deleteData(String dateTime) {
         int id = currencyRepository.getByDate(dateTime).get(0).getId();
         return currencyRepository.deleteById(id);
     }
-
+    // 新增資料
     public void insertData(Currency currency) {
         currency.setUpdateTime(new Date());
         currencyRepository.save(currency);
     }
-
+    // 更新資料
     public void updateData(Currency currency) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateTime = dateFormat.format(currency.getUpdateTime());

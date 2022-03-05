@@ -16,6 +16,7 @@ public class LatestData {
 
     @ResponseBody
     @PostMapping("/latestData")
+    // 資料轉換
     public Result changeData() throws ParseException {
         dataProcessing.changeData(dataProcessing.returnJSON());
         return Result.success();
